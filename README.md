@@ -1,7 +1,7 @@
 # VotedPerceptron
 
 ## run.py
-Implementation of the voted perceptron as detailed by Yoav Freund and Robert E. Schapire in "Large Margin Classification Using the Perceptron Algorithm" (1999).
+Implementation of the voted perceptron as detailed by [Yoav Freund and Robert E. Schapire in "Large Margin Classification Using the Perceptron Algorithm" (1999)](https://link.springer.com/content/pdf/10.1023/A:1007662407062.pdf).
 
 In summary...
 The general concept is simiilar to a boosting algorithm. The algorithm is the same as a regular perceptron algorithm, but instead of overwriting the previous weight vector, the algorithm stores each update of the weight vector in an array, repeating this for T epochs (T is a hyper-parameter found through validation testing by splitting up the training set data). Each perceptron weight vector has its own weight attached to it, determined by its lifetime; Models that last longer without misclassification have heavier weights, and vice versa. Then, the weighted sum of each model's prediction on a test point is thresholded by sign() for a final prediction.
